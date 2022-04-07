@@ -20,10 +20,7 @@ vc = cv2.VideoCapture(0)
 
 if vc.isOpened(): # try to get the first frame
     rval, frame = vc.read()
-else:
-    rval = False
-
-while rval:
+    sleep(2)
     rval, frame = vc.read()
     average_cam_bright = frame.mean()
     if average_cam_bright < threshhold:
